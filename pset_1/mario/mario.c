@@ -16,11 +16,14 @@ int main(void)
     //Takes input and prints # incrementally if less than 9
     for (int i = 1; i <= prompt; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = i; j < prompt; j++)
+        {
+            printf(" ");
+        }
+        for (int k = 1; k <= i; k++)
         {
             printf("#");
         }
         printf("\n");
     }
-
 }
