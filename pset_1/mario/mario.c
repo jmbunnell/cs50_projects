@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    //Variable 
+    //Variable created
     int prompt;
 
     //Input has to be integer 1-8
@@ -13,6 +13,14 @@ int main(void)
     }
     while (prompt <= 0 || prompt >= 9);
 
-    //Print integer store in variable
-    printf("Stored: %i\n", prompt);
+    //Takes input and prints # incrementally if less than 9
+    for (int i = 1; i <= prompt; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+
 }
