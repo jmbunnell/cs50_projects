@@ -37,7 +37,7 @@ int main(void)
 
 int get_cents(void)
 {
-    // TODO
+    // TODO - done
     int change;
     do
     {
@@ -49,8 +49,23 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-    // TODO
-    return 0;
+    // TODO - done
+    if (cents >= 75)
+    {
+        return 3;
+    }
+    else if (cents >= 50 && cents < 75)
+    {
+        return 2;
+    }
+    else if (cents >= 25 && cents < 50)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 int calculate_dimes(int cents)
