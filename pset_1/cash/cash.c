@@ -70,8 +70,19 @@ int calculate_quarters(int cents)
 
 int calculate_dimes(int cents)
 {
-    // TODO
-    return 0;
+    // TODO - done
+    if ((cents / 10) == 2)
+    {
+        return 2;
+    }
+    else if ((cents / 10) == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 int calculate_nickels(int cents)
