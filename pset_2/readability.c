@@ -20,11 +20,13 @@ int count_letters(string text)
     string s = text;
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        // Omits spaces
-        if(s[i] != ' ')
+        // Counts alphabetical characters only
+        if ( (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') )
         {
-          count++;
+            count++;
         }
     }
     return count;
 }
+
+
