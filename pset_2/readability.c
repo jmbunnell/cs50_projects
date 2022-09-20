@@ -36,13 +36,17 @@ int count_words(string text)
 {
     int count = 0;
     string s = text;
-
-    for (int i = 0, n = strlen(s); i < n; i++)
+    do
     {
-        if (s[i + 1] == 32)
+        for (int i = 0, n = strlen(s); i < n; i++)
         {
-            count++;
+            if ( ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) && (s[i + 1] == 32) )
+            {
+                count++;
+            }
         }
-    }
-    return count + 1;
+        return count;
+    } while (count > 0);
+    return count;
 }
+
