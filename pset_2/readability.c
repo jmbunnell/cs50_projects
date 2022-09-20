@@ -59,5 +59,17 @@ int count_words(string text)
 // Counts number of sentences in a string
 int count_sentences(string text)
 {
-
+    int count = 0;
+    string s = text;
+    // Loops thru string
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        // Checks if character is period, question mark or exclamation
+        if (s[i] == 33 || s[i] == 46 || s[i] == 63)
+        {
+            count ++;
+        }
+    }
+    return count;
 }
+
