@@ -4,6 +4,7 @@
 
 int count_letters(string text);
 int count_words(string text);
+int count_sentences(string text);
 
 int main(void)
 {
@@ -13,6 +14,8 @@ int main(void)
     printf("%i letters\n", results);
     int wordCount = count_words(text);
     printf("%i words\n", wordCount);
+    int sentCount = count_sentences(text);
+    printf("%i sentences\n", sentCount);
 }
 
 
@@ -53,3 +56,8 @@ int count_words(string text)
     }
 }
 
+// Counts number of sentences in a string
+int count_sentences(string text)
+{
+
+}
