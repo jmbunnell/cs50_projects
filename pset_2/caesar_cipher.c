@@ -3,7 +3,14 @@
 
 int main(int argc, string argv[])
 {
-    // Make sure program is used with command line argument
+    // Make sure program contains command line argument
+    int n = argc;
+    if (n <= 1 || n > 2)
+    {
+        printf("Usage: ./caesar key\n");
+    }
+    return 0;
+
 
     // Make sure every character in argument is an digit
 
