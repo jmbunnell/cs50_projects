@@ -6,42 +6,56 @@
 
 // Function prototypes
 bool only_digits(string s);
-char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
-
     // Make sure program contains command line argument
-    int n = argc;
-    if (n <= 1 || n > 2)
+    int confirm = argc;
+    if (confirm != 2)
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
 
     // Make sure every character in argument is an digit
-    bool y = only_digits(argv[1]);
-    if (y == false)
+    bool check = only_digits(argv[1]);
+    for (int i = 0; i < strlen(argv[1]); i++)
     {
-        printf("Usage: ./caesar key\n");
+        if (!isdigit(argv[1][i]))
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
     }
+
+    // Prompt user for input - plaintext
+    string plaintext = get_string("plaintext: ");
 
     // Convert argument from string to an integer
     int convert = atoi(argv[1]);
-    //printf("convert: %i\n", convert);
+    printf("ciphertext: ");
 
-    // Prompt user for input - plaintext
-    string prompt = get_string("plaintext: ");
-
-
-    // For each character in plaintext
-
-        // Rotate character if it's a letter
-
+    // Obtain ciphertext
+    for (int i = 0; i < strlen(plaintext); i++)
+    {
+        if (isupper(plaintext[i]))
+        {
+            printf("%c", (((plaintext[i] - 65) + convert) % 26) + 65);
+        }
+        else if (islower(plaintext[i]))
+        {
+            printf("%c", (((plaintext[i] - 97) + convert) % 26) + 97);
+        }
+        else
+        {
+            printf("%c", plaintext[i]);
+        }
+    }
+    printf("\n");
     return 0;
 }
 
 // Checks characters in argument provided
-
 bool only_digits(string s)
 {
     for (int i = 0, n = strlen(s); i < n; i++)
@@ -52,12 +66,6 @@ bool only_digits(string s)
         }
     }
     return false;
-}
-
-// For each character in plaintext
-char rotate(char c, int n)
-{
-    // Rotate character if it's a letter
 }
 
 
