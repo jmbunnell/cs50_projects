@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-// Prototypes
+// Function prototypes
 bool only_digits(string s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, string argv[])
     {
         printf("Usage: ./caesar key\n");
     }
+
     // Make sure every character in argument is an digit
     bool y = only_digits(argv[1]);
     if (y == false)
@@ -24,8 +26,12 @@ int main(int argc, string argv[])
     }
 
     // Convert argument from string to an integer
+    int convert = atoi(argv[1]);
+    //printf("convert: %i\n", convert);
 
     // Prompt user for input - plaintext
+    string prompt = get_string("plaintext: ");
+
 
     // For each character in plaintext
 
@@ -47,4 +53,9 @@ bool only_digits(string s)
     }
     return false;
 }
+
+// For each character in plaintext
+char rotate(char c, int n)
+
+    // Rotate character if it's a letter
 
