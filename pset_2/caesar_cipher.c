@@ -56,6 +56,8 @@ bool only_digits(string s)
 
 // For each character in plaintext
 char rotate(char c, int n)
-
+{
     // Rotate character if it's a letter
+}
+
 
